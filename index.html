@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Card Flip 3D</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+ 
+  <div class="scene">
+    <div class="card">
+ 
+      <!-- FRENTE -->
+      <div class="card__face card__face--front">
+        <div class="card__symbols">
+          <span class="symbol circle"></span>
+          <span class="symbol triangle"></span>
+          <span class="symbol square"></span>
+        </div>
+      </div>
+ 
+      <!-- VERSO -->
+      <div class="card__face card__face--back">
+        <div class="card__back-content">
+          <div class="card__house-icon">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="32" r="30" fill="none" stroke="#5c3a00" stroke-width="3.5"/>
+              <polygon points="32,12 10,34 16,34 16,52 28,52 28,40 36,40 36,52 48,52 48,34 54,34" fill="none" stroke="#5c3a00" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+              <rect x="26" y="40" width="12" height="12" rx="1" fill="#5c3a00"/>
+              <polygon points="32,12 10,34 54,34" fill="#5c3a00"/>
+            </svg>
+          </div>
+          <p class="card__number">8650 4006</p>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+ 
+</body>
+</html>
+ 

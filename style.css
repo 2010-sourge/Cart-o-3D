@@ -1,0 +1,189 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0dfa0;
+}
+ 
+
+.scene {
+  width: 380px;
+  height: 240px;
+  perspective: 900px;
+}
+ 
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+  border-radius: 10px;
+  cursor: pointer;
+}
+ 
+.scene:hover .card {
+  transform: rotateY(180deg);
+}
+ 
+
+.card__face {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d4820a;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+ 
+.card__face::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 60%);
+  border-radius: inherit;
+  pointer-events: none;
+}
+ 
+.card__face--back {
+  transform: rotateY(180deg);
+}
+ 
+
+.card__symbols {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+ 
+.symbol {
+  display: inline-block;
+  border: 5px solid #5c3a00;
+}
+ 
+.symbol.circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: transparent;
+}
+ 
+.symbol.triangle {
+  width: 72px;
+  height: 68px;
+  border: none;
+  background: transparent;
+  position: relative;
+}
+ 
+.symbol.triangle::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-left: 36px solid transparent;
+  border-right: 36px solid transparent;
+  border-bottom: 68px solid #5c3a00;
+}
+ 
+.symbol.triangle::after {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 14px;
+  border-left: 29px solid transparent;
+  border-right: 29px solid transparent;
+  border-bottom: 54px solid #d4820a;
+}
+ 
+.symbol.square {
+  width: 68px;
+  height: 68px;
+  border-radius: 4px;
+  background: transparent;
+}
+ 
+
+.card__back-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+ 
+.card__house-icon {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+}
+ 
+.card__house-icon svg {
+  width: 100%;
+  height: 100%;
+}
+ 
+.card__number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #5c3a00;
+  letter-spacing: 2px;
+}
+ 
+
+@media (max-width: 480px) {
+  .scene {
+    width: 300px;
+    height: 192px;
+  }
+ 
+  .symbol.circle,
+  .symbol.square {
+    width: 54px;
+    height: 54px;
+  }
+ 
+  .symbol.triangle {
+    width: 54px;
+    height: 52px;
+  }
+ 
+  .symbol.triangle::before {
+    border-left-width: 27px;
+    border-right-width: 27px;
+    border-bottom-width: 52px;
+  }
+ 
+  .symbol.triangle::after {
+    left: 6px;
+    top: 11px;
+    border-left-width: 21px;
+    border-right-width: 21px;
+    border-bottom-width: 41px;
+  }
+ 
+  .card__symbols {
+    gap: 16px;
+  }
+ 
+  .card__house-icon {
+    width: 56px;
+    height: 56px;
+  }
+ 
+  .card__number {
+    font-size: 1.5rem;
+  }
+}
+ 
